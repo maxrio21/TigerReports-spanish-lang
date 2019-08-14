@@ -1,0 +1,235 @@
+core:
+  command-aliases: shop,qshop
+  lang: en
+general:
+  fix-max-item-stack-size: true
+  stack-button-set-amount-to-max: true
+  allow-buy-when-full-inventory: true
+  number-format: '###,###.###'
+  signs: true
+  disabled-in-gm:
+  - CREATIVE
+  - SPECTATOR
+  disabled-in-worlds:
+  - world2
+  - some_world
+happy-hours:
+  monday:
+    time: 12:00-23:00
+    for-shops:
+      blocks: 30.0
+      ALL: 15.0
+transaction-log:
+  output:
+    file: true
+    console: true
+  format:
+    date: dd/MM/yyyy HH:mm:ss
+    buy: '[%date%] %player% bought x%amount% of %item% for %price%&7 in shop %shop%'
+    sell: '[%date%] %player% sold x%amount% of %item% for %price%&7 in shop %shop%'
+messages:
+  chat: true
+  action-bar: true
+  titles: true
+sounds:
+  enabled: true
+  buy-success: ENTITY_EXPERIENCE_ORB_PICKUP
+  buy-fail: BLOCK_ANVIL_PLACE
+  sell-success: ENTITY_EXPERIENCE_ORB_PICKUP
+  sell-fail: BLOCK_ANVIL_PLACE
+  click: UI_BUTTON_CLICK
+main-menu:
+  enabled: true
+  title: '&6&lQuantum Shop 2.0'
+  size: 54
+  shops:
+    blocks: 20
+    wool: 22
+    equip: 24
+    food: 30
+    minerals: 32
+  custom-items:
+    filler:
+      material: YELLOW_STAINED_GLASS_PANE:0:1
+      name: ''
+      lore: []
+      skull-hash: ''
+      slots: 0,1,2,3,4,5,6,7,8,45,46,47,48,49,50,51,52,53,9,18,27,36,17,26,35,44
+    filler2:
+      material: ORANGE_STAINED_GLASS_PANE:0:1
+      name: ''
+      lore: []
+      skull-hash: ''
+      slots: 1,3,5,7,45,47,49,51,53,9,27,17,35
+click-actions:
+  BUY_SELECTION: LEFT
+  SELL_SELECTION: RIGHT
+  SELL_ALL: MIDDLE
+  BUY_SINGLE: SHIFT_LEFT
+  SELL_SINGLE: SHIFT_RIGHT
+item-format:
+  total:
+  - '%item_lore%'
+  - '&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'
+  - '%buy%'
+  - '%sell%'
+  buy:
+  - '&c» &7Left-Click: &cBuy &7(&4%price%%currency%&7)'
+  sell:
+  - '&a» &7Right-Click: &aSell &7(&2%price%%currency%&7)'
+  - '&e» &7Middle-Click: &eSell all &7(&6%price%%currency%&7)'
+amount-selection:
+  item-slot: 22
+  button-format:
+    ADD:
+      material: LIME_STAINED_GLASS_PANE:0:1
+      name: '&a&lADD +%amount%'
+      lore: []
+      skull-hash: ''
+    TAKE:
+      material: RED_STAINED_GLASS_PANE:0:1
+      name: '&c&lTAKE -%amount%'
+      lore: []
+      skull-hash: ''
+    SET:
+      material: CYAN_STAINED_GLASS_PANE:0:1
+      name: '&9&lSET x%amount%'
+      lore: []
+      skull-hash: ''
+    STACK:
+      material: LIME_STAINED_GLASS:0:1
+      name: '&a&lSET x%amount% STACK(s)'
+      lore: []
+      skull-hash: ''
+    ACCEPT:
+      material: LIME_STAINED_GLASS:0:1
+      name: '&a&l[Accept]'
+      lore:
+      - '&a» &7Item amount: &a%stacks% stacks &7with &ax%amount% &7in each.'
+      - '&a» &7Total price: &a%price%%currency%&7.'
+      skull-hash: ''
+    CANCEL:
+      material: RED_STAINED_GLASS:0:1
+      name: '&c&l[Cancel]'
+      lore: []
+      skull-hash: ''
+  buying:
+    title: '&8[&6Q-Shop&8] &fBuying'
+    size: 54
+    buttons:
+      ACCEPT:
+        accept:
+          amount: 1
+          slot: 41
+      CANCEL:
+        cancel:
+          amount: 1
+          slot: 39
+      ADD:
+        add-1:
+          amount: 1
+          slot: 24
+        add-16:
+          amount: 16
+          slot: 25
+        add-32:
+          amount: 32
+          slot: 26
+      TAKE:
+        take-1:
+          amount: 1
+          slot: 18
+        take-16:
+          amount: 16
+          slot: 19
+        take-32:
+          amount: 32
+          slot: 20
+      SET:
+        set-1:
+          amount: 1
+          slot: 3
+        set-32:
+          amount: 32
+          slot: 4
+        set-64:
+          amount: 64
+          slot: 5
+      STACK:
+        stack-1:
+          amount: 1
+          slot: 30
+        stack-3:
+          amount: 3
+          slot: 31
+        stack-5:
+          amount: 5
+          slot: 32
+    custom-items:
+      balance:
+        material: GOLD_NUGGET:0:1
+        name: '&e&lBALANCE'
+        lore:
+        - '&e» &7Your balance: &e%balance%%currency%'
+        skull-hash: ''
+        slots: '40'
+  selling:
+    title: '&8[&2Q-Shop&8] &fSelling'
+    size: 54
+    buttons:
+      ACCEPT:
+        accept:
+          amount: 1
+          slot: 41
+      CANCEL:
+        cancel:
+          amount: 1
+          slot: 39
+      ADD:
+        add-1:
+          amount: 1
+          slot: 24
+        add-16:
+          amount: 16
+          slot: 25
+        add-32:
+          amount: 32
+          slot: 26
+      TAKE:
+        take-1:
+          amount: 1
+          slot: 18
+        take-16:
+          amount: 16
+          slot: 19
+        take-32:
+          amount: 32
+          slot: 20
+      SET:
+        set-1:
+          amount: 1
+          slot: 3
+        set-32:
+          amount: 32
+          slot: 4
+        set-64:
+          amount: 64
+          slot: 5
+      STACK:
+        stack-1:
+          amount: 1
+          slot: 30
+        stack-3:
+          amount: 3
+          slot: 31
+        stack-5:
+          amount: 5
+          slot: 32
+    custom-items:
+      balance:
+        material: GOLD_NUGGET:0:1
+        name: '&e&lBALANCE'
+        lore:
+        - '&e» &7Your balance: &e%balance%%currency%'
+        skull-hash: ''
+        slots: '40'
